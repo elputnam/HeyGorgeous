@@ -25,7 +25,7 @@ function setup() {
   createCanvas(bronze.width, bronze.height);
   colorMode(HSB, 360, 100, 100, 100);
   background(0);
-  frameRate(10);
+  frameRate(8);
   //rectMode(CENTER);
 
 }
@@ -47,7 +47,7 @@ function draw() {
   push();
   selfie1.filter(GRAY);
   tint(255, random(50));
-  image(selfie1, random(30), 0, width, height);
+  image(selfie1, random(50), 0, width, height);
 
 
   blend(selfie1, 0, 0, selfie1.width, selfie1.height, 0, 0, width, height, LIGHTEST);
@@ -68,14 +68,14 @@ function draw() {
   // }
   push();
   tint(0, alp2);
-  image(sil, random(-2,2), random(-2,2));
+  image(sil, random(-5,5), random(-5,5));
   pop();
 
-  for (let i = 0; i <5; i++){
+  for (let i = 0; i <10; i++){
     noStroke();
     fill(colour, random(100), 100, alp2);
     // fill(0, random(alp1));
-    rect(0, random(height), width, 100);
+    rect(0, random(height), width, 50);
   }
   
 
