@@ -6,6 +6,7 @@ let bronze;
 let pigeons;
 let selfie1;
 let selfie2;
+let sil;
 
 let alp1 = 0;
 let alp2 = 255;
@@ -17,13 +18,14 @@ function preload(){
   pigeons = loadImage('assets/HeyGorgeous_pigeons.png');
   selfie1 = loadImage('assets/HeyGorgeous_self1.png');
   selfie2 = loadImage('assets/HeyGorgeous_self2.png');
+  sil = loadImage('assets/HeyGorgeous_sil.png')
 }
 
 function setup() {
   createCanvas(bronze.width, bronze.height);
   colorMode(HSB, 360, 100, 100, 100);
   background(0);
-  frameRate(5);
+  frameRate(10);
   //rectMode(CENTER);
 
 }
@@ -64,6 +66,10 @@ function draw() {
   //   fill(0, random(alp1));
   //   rect(0, random(height), width, random(20));
   // }
+  push();
+  tint(0, alp2);
+  image(sil, random(-2,2), random(-2,2));
+  pop();
 
   for (let i = 0; i <5; i++){
     noStroke();
@@ -78,6 +84,9 @@ function draw() {
   tint(alp2);
   blend(selfie2, 0, 0, selfie2.width, selfie2.height, 0, 0, width, height, DARKEST);
   pop();
+  
+  
+  //blend(sil, 0, 0, sil.width, sil.height, 0, 0, width, height, DIFFERENCE);
   if (frameCount%int(random(20))==0){
     colour = random(360);
     bronze.filter(INVERT);
